@@ -7,7 +7,6 @@ namespace GradeBook
   {
     static void Main(string[] args)
     {
-      var numbers = new[] { 12.7, 13.5, 20.1 };
       var grades = new List<double>() { 12.7, 13.5, 20.1 };
       grades.Add(56.1);
 
@@ -17,8 +16,8 @@ namespace GradeBook
         sum += number;
       }
       var avg = sum/grades.Count;
-      System.Console.WriteLine($"The sum is: {sum}");
-      System.Console.WriteLine($"The average is: {avg}");
+      System.Console.WriteLine($"The sum is: {sum:N1}");
+      System.Console.WriteLine($"The average is: {avg:N1}");
 
       if (args.Length > 0)
       {
