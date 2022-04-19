@@ -21,24 +21,21 @@ namespace GradeBook
     // this method will parse through the 'grades' list and determine
     // the sum, lowGrade, highGrade, and average. Then it will print 
     // the results to the console
-    public void ShowStatistics()
+    public Statistics GetStatistics()
     {
-      var sum = 0.0;
-      var highGrade = double.MinValue;
-      var lowGrade = double.MaxValue;
-      foreach (var number in grades)
+      var result = new Statistics();
+      result.Average = 0.0;
+      result.High = double.MinValue;
+      result.Low = double.MaxValue;
+      foreach (var grade in grades)
       {
-        lowGrade = Math.Min(number, lowGrade);
-        highGrade = Math.Max(number, highGrade);
-        sum += number;
+        result.Low = Math.Min(grade, result.Low);
+        result.High = Math.Max(grade, result.High);
+        result.Average += grade;
       }
-      var avg = sum / grades.Count;
+      result.Average /= grades.Count;
 
-
-      System.Console.WriteLine($"The lowest grade is: {lowGrade}");
-      System.Console.WriteLine($"The highest grade is: {highGrade}");
-      System.Console.WriteLine($"The average is: {avg:N1}");
-
+      return result; 
     }
 
     // variable declarations
