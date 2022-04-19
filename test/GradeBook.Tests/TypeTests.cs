@@ -8,17 +8,17 @@ public class TypeTests
   [Fact]
   public void Test1()
   {
-    var x = GetInt(); 
-    setInt(ref x); 
+    var x = GetInt();
+    setInt(ref x);
 
     Assert.Equal(42, x);
 
-    
+
   }
 
   private void setInt(ref int x)
   {
-    x = 42; 
+    x = 42;
   }
 
   private int GetInt()
@@ -72,7 +72,20 @@ public class TypeTests
     book.Name = name;
   }
 
+  [Fact]
+  public void StringsBehaveLikeValueTypes()
+  {
+    string name = "Brandon";
+    var upper = MakeUppercase(name);
 
+    Assert.Equal("Brandon", name);
+    Assert.Equal("BRANDON", upper);
+  }
+
+  private string MakeUppercase(string parameter)
+  {
+    return parameter.ToUpper();
+  }
 
   [Fact]
   public void GetBookReturnsDifferentObjects()
@@ -102,6 +115,19 @@ public class TypeTests
   {
     return new Book(name);
   }
+
+ [Fact]
+  public void InvalidAndValidGrades()
+  {
+
+    var book1 = new Book("My book");
+    book1.AddGrade(-5);
+    book1.AddGrade(110);
+
+
+    
+  }
+
 
 
 
