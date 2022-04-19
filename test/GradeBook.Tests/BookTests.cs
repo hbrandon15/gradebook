@@ -7,7 +7,7 @@ public class BookTests
   [Fact]
   // Here we are running a simple test to see if our expected 
   // value equals our actual value
-  public void Test1()
+  public void BookCalculatesAnAverageGrade()
   {
 
     // arrange section 
