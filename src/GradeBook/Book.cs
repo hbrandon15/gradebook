@@ -3,7 +3,7 @@ namespace GradeBook
 {
 
 
-  class Book
+  public class Book
   {
     // This is our basic constructor method that sets every Book object
     // with a variable named 'grades' 
