@@ -9,6 +9,7 @@ namespace GradeBook
     // with a variable named 'grades' 
     public Book(string name)
     {
+      const int X = 3; 
       grades = new List<double>();
       Name = name;
     }
@@ -49,7 +50,7 @@ namespace GradeBook
 
       else
       {
-        throw new ArgumentException($"Invalid {nameof(grade)}")
+        throw new ArgumentException($"Invalid {nameof(grade)}");
       }
 
     }
@@ -103,7 +104,15 @@ namespace GradeBook
 
     // variable declarations
     private List<double> grades;
-    public string Name;
+
+    public string Name
+    {
+      get;
+      private set;
+    }
+
+    public const string CATEGORY  = "Science"; 
+
 
 
   }
