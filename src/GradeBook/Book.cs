@@ -8,7 +8,7 @@ namespace GradeBook
   {
     // This is our basic constructor method that sets every Book object
     // with a variable named 'grades' 
-    public Book(string name)
+    public Book(string name) : base(name)
     {
       const int X = 3; 
       grades = new List<double>();

@@ -10,6 +10,7 @@ namespace GradeBook
     {
 
       var book = new Book("Brandon's gradebook");
+      book.N
       book.GradeAdded += OnGradeAdded;
 
 
