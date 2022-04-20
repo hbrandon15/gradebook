@@ -13,7 +13,7 @@ public class BookTests
     // arrange section 
     // this is where you put all your test data and arrange
     // object and values
-    var book = new Book("");
+    var book = new InMemoryBook("");
     book.AddGrade(89.1);
     book.AddGrade(90.5);
     book.AddGrade(77.3);
