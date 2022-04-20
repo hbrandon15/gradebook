@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 namespace GradeBook
 {
+  public delegate void GradeAddedDelegate(object sender, EventArgs args);
 
 
   public class Book
@@ -46,6 +47,10 @@ namespace GradeBook
       if (grade <= 100 && grade >= 0)
       {
         grades.Add(grade);
+        if(GradeAdded != null)
+        {
+          GradeAdded(this,new EventArgs());
+        }
       }
 
       else
@@ -54,6 +59,8 @@ namespace GradeBook
       }
 
     }
+
+    public event GradeAddedDelegate GradeAdded;
     // this method will parse through the 'grades' list and determine
     // the sum, lowGrade, highGrade, and average. Then it will print 
     // the results to the console
