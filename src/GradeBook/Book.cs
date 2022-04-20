@@ -4,7 +4,7 @@ namespace GradeBook
   public delegate void GradeAddedDelegate(object sender, EventArgs args);
 
 
-  public class Book
+  public class Book : NamedObject
   {
     // This is our basic constructor method that sets every Book object
     // with a variable named 'grades' 
@@ -111,12 +111,6 @@ namespace GradeBook
 
     // variable declarations
     private List<double> grades;
-
-    public string Name
-    {
-      get;
-      set;
-    }
 
     public const string CATEGORY  = "Science"; 
 

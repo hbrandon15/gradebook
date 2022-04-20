@@ -11,10 +11,6 @@ namespace GradeBook
 
       var book = new Book("Brandon's gradebook");
       book.GradeAdded += OnGradeAdded;
-      book.GradeAdded += OnGradeAdded;
-      book.GradeAdded -= OnGradeAdded;
-      book.GradeAdded += OnGradeAdded;
-
 
 
 
