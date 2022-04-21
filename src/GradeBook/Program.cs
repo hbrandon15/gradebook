@@ -9,11 +9,12 @@ namespace GradeBook
     static void Main(string[] args)
     {
 
-      var book = new InMemoryBook("Brandon's gradebook");
+      IBook book = new DiskBook("Brandon's gradebook");
       book.GradeAdded += OnGradeAdded;
       EnterGrades(book);
 
       var stats = book.GetStatistics();
+
       System.Console.WriteLine($"For the book named {book.Name}");
       System.Console.WriteLine($"The lowest grade is: {stats.Low}");
       System.Console.WriteLine($"The highest grade is: {stats.High}");
