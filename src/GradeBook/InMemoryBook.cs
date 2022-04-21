@@ -17,7 +17,6 @@ namespace GradeBook
     // with a variable named 'grades' 
     public InMemoryBook(string name) : base(name)
     {
-      const int X = 3;
       grades = new List<double>();
       Name = name;
     }

@@ -39,7 +39,7 @@ namespace GradeBook
           line = reader.ReadLine();
         }
       }
-      return result; 
+      return result;  
     }
   }
 
