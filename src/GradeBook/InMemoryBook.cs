@@ -3,17 +3,25 @@ namespace GradeBook
 {
   public delegate void GradeAddedDelegate(object sender, EventArgs args);
 
-
-  public class InMemoryBook : Book
+  public interface IBook
+  {
+    
+    void AddGrade(double grade);
+    Statistics GetStatistics();
+    string Name { get; }
+    event GradeAddedDelegate GradeAdded;
+  }
+  public class InMemoryBook : Book, IBook
   {
     // This is our basic constructor method that sets every Book object
     // with a variable named 'grades' 
     public InMemoryBook(string name) : base(name)
     {
-      const int X = 3; 
+      const int X = 3;
       grades = new List<double>();
       Name = name;
     }
+
 
     public void AddLetterGrade(char letter)
     {
@@ -47,9 +55,9 @@ namespace GradeBook
       if (grade <= 100 && grade >= 0)
       {
         grades.Add(grade);
-        if(GradeAdded != null)
+        if (GradeAdded != null)
         {
-          GradeAdded(this,new EventArgs());
+          GradeAdded(this, new EventArgs());
         }
       }
 
@@ -60,11 +68,11 @@ namespace GradeBook
 
     }
 
-    public event GradeAddedDelegate GradeAdded;
+    public override event GradeAddedDelegate GradeAdded;
     // this method will parse through the 'grades' list and determine
     // the sum, lowGrade, highGrade, and average. Then it will print 
     // the results to the console
-    public Statistics GetStatistics()
+    public override Statistics GetStatistics()
     {
       var result = new Statistics();
       result.Average = 0.0;
@@ -112,7 +120,7 @@ namespace GradeBook
     // variable declarations
     private List<double> grades;
 
-    public const string CATEGORY  = "Science"; 
+    public const string CATEGORY = "Science";
 
 
 
